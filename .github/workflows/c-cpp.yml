@@ -8,11 +8,11 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
+    - name: deps
+      run: sudo apt-install -y openssl libboost1.35-dev libboost-filesystem1.35-dev libboost-thread1.35-dev liblog4cpp5-dev
     - name: configure
       run: ./configure
     - name: make
